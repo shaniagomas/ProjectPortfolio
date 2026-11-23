@@ -1,0 +1,148 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 10px;
+    background: transparent;
+    font-family: "Helvetica Now Condensed", "Archivo Narrow", sans-serif;
+  }
+
+  /* Controls normal spacing between the 3 buttons */
+  .button-group {
+    display: flex;
+    flex-direction: column; /* Buttons sit side-by-side; change to "column" to stack vertically */
+    gap: 12px;           /* Normal spacing between buttons */
+    align-items: flex-start;
+  }
+
+  .hover-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .main-btn {
+    font-family: "Helvetica Now Condensed", "Helvetica Neue Condensed", "Archivo Narrow", sans-serif;
+    letter-spacing: 0.02em; /* Gives a crisp, modern condensed feel */
+    width: 250px;          /* Forces every button to this exact width */
+    text-align: left;    /* Centers the text inside the fixed width */
+    white-space: normal;   /* Allows extra-long text to wrap cleanly if needed */
+    background-color: #f3f2ef;
+    color: #211b34;
+    padding: 8px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid #211b34; /* Thickness, style, and border color */
+    border-radius: 8px;
+    cursor: default;
+    transition: background-color 0.2s ease;
+  }
+
+  .main-btn:hover {
+    background-color: #cbc9c6;
+  }
+
+  /* Floating Side List (Takes up zero layout space) */
+  .side-list {
+    position: absolute;  /* Floats on top without pushing other buttons */
+    top: 0;
+    left: 100%;          /* Anchors right next to the button's right edge */
+    margin: 0 0 0 8px;   /* Small 8px gap from the button */
+    
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+    list-style: none;
+    padding: 10px 14px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 99;         /* Ensures the floating list sits above adjacent buttons */
+  }
+
+  .main-btn:hover + .side-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .side-list li {
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 0;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+  <div class="button-group">
+
+    <!-- BUTTON 1 -->
+    <div class="hover-wrapper">
+      <button class="main-btn">The Medical City Clinic</button>
+      <ul class="side-list">
+        <li>TriNoma Mall</li>
+        <li>Robinsons Place Antipolo</li>
+        <li>SM City Cauayan</li>
+        <li>Robinsons Cainta</li>
+        <li>Westgate Center</li>
+        <li>Santolan Town Plaza</li>
+        <li>SM East Ortigas</li>
+      </ul>
+    </div>
+
+    <!-- BUTTON 2 -->
+    <div class="hover-wrapper">
+      <button class="main-btn">GRRI Dialysis Center</button>
+      <ul class="side-list">
+        <li>Xentromall Lemery</li>
+      </ul>
+    </div>
+
+    <!-- BUTTON 3 -->
+    <div class="hover-wrapper">
+      <button class="main-btn">Bebang Halo-Halo stores</button>
+      <ul class="side-list">
+        <li>SM San Jose del Monte</li>
+        <li>SM Center Sangandaan</li>
+        <li>SM Center Pulilan</li>
+        <li>CTTM Square</li>
+        <li>Uptown Mall BGC</li>
+        <li>NAIA Terminal 3</li>
+      </ul>
+    </div>
+
+    <!-- BUTTON 4 -->
+    <div class="hover-wrapper">
+      <button class="main-btn">Office Fit-Out Renovation</button>
+      <ul class="side-list">
+        <li>Bebang Enterprise Inc.</li>
+        <li>Monricher Construction & Development Corp.</li>
+      </ul>
+    </div>
+
+    <!-- BUTTON 5 -->
+    <div class="hover-wrapper">
+      <button class="main-btn">Residential</button>
+      <ul class="side-list">
+        <li>Bliss Tagaytay</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
